@@ -1,0 +1,639 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Agency Dark</title>
+<meta name="generator" content="WYSIWYG Web Builder 16 Trial Version - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/agencydarkWEb.css" rel="stylesheet">
+<link href="css/my Portfolio.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="skrollr.min.js"></script>
+<script src="wb.animatesvg.min.js"></script>
+<script src="util.min.js"></script>
+<script src="modal.min.js"></script>
+<script src="wwb16.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $('#reviewsImage1').addClass('visibility-hidden');
+   $('#portfolio-image2').addClass('visibility-hidden');
+   $('#reviewsImage1').addClass('visibility-hidden');
+   $('#portfolio-image2').addClass('visibility-hidden');
+   $('#reviewsImage1').addClass('visibility-hidden');
+   $('#portfolio-image2').addClass('visibility-hidden');
+   $("a[href*='#header']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#welcome']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_welcome').offset().top-88 }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#LayoutGrid8']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid8').offset().top-88 }, 600, 'easeOutCirc');
+   });
+   function onScrollLayoutGrid8()
+   {
+      var $obj = $("#wb_LayoutGrid8");
+      if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+      {
+         $obj.addClass("in-viewport");
+         AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+         AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+      }
+   }
+   onScrollLayoutGrid8();
+   $(window).scroll(function(event)
+   {
+      onScrollLayoutGrid8();
+   });
+   $("a[href*='#LayoutGrid2']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid2').offset().top-88 }, 600, 'easeOutCirc');
+   });
+   function onScrollLayoutGrid2()
+   {
+      var $obj = $("#wb_LayoutGrid2");
+      if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+      {
+         $obj.addClass("in-viewport");
+         AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+         AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+      }
+   }
+   onScrollLayoutGrid2();
+   $(window).scroll(function(event)
+   {
+      onScrollLayoutGrid2();
+   });
+   $("a[href*='#services']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_services').offset().top-88 }, 600, 'easeOutCirc');
+   });
+   function skrollrInit()
+   {
+      skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
+   }
+   skrollrInit();
+   $("a[href*='#questions']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_questions').offset().top-88 }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#reviews']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_reviews').offset().top-88 }, 600, 'easeOutCirc');
+   });
+   function onScrollreviews()
+   {
+      var $obj = $("#wb_reviews");
+      if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+      {
+         $obj.addClass("in-viewport");
+         AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+         AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+      }
+   }
+   onScrollreviews();
+   $(window).scroll(function(event)
+   {
+      onScrollreviews();
+   });
+   $('#MegaMenu1 .submenu ul li h2 a').addClass('ui-widget-header');
+   $('#MegaMenu1 .submenu ul li a').hover(function()
+   {
+      $(this).addClass('ui-state-hover');
+   }, function()
+   {
+      $(this).removeClass('ui-state-hover');
+   });
+   $('.ui-state-default').hover(function()
+   {
+      $(this).addClass('ui-state-hover');
+   }, function()
+   {
+      $(this).removeClass('ui-state-hover');
+   });
+   $('#MegaMenu1 li').hover(function()
+   {
+      var top = $(this).find('.button').outerHeight();
+      $(this).find('.submenu').css( {'top': top });
+      $(this).find('.submenu').show();
+      var maxWidth = 0;
+      $(this).find('ul').each(function()
+      {
+         $(this).find('li').each(function()
+         {
+            $(this).css('width', 'auto');
+            if ($(this).width() > maxWidth)
+               maxWidth = $(this).width();
+         });
+      });
+      $(this).find('ul').each(function()
+      {
+         $(this).find('li').width(maxWidth);
+         $(this).css({'width' : maxWidth+4});
+      });
+      if ($(this).find('.row').length > 0 )
+      {
+         var maxRowWidth = 0;
+         $(this).find('.row').each(function()
+         {
+            var width = 0;
+            $(this).find('ul').each(function()
+            {
+               width += $(this).width();
+            });
+            if (width > maxRowWidth)
+            {
+               maxRowWidth = width;
+            }
+         });
+         $(this).find('.submenu').css({'width' : maxRowWidth});
+         $(this).find('.row:last').css({'margin': '0'});
+      }
+      else
+      {
+         var width = 0;
+         $(this).find('ul').each(function()
+         {
+            width += $(this).width();
+         });
+         $(this).find('.submenu').css({'width' : width});
+      }
+      $(this).find('.submenu').slideDown();
+   }, function()
+   {
+      $(this).find('.submenu').hide();
+   })
+   $('#MegaMenu1 li .submenu').hide();
+   $('#MegaMenu1-nav').click(function()
+   {
+      $('body').removeClass('overflow-no-scroll');
+      $('#wb_MegaMenu1').removeClass('open');
+   });
+   $('#MegaMenu1-hamburger').click(function()
+   {
+      $('body').addClass('overflow-no-scroll');
+      $('#wb_MegaMenu1').addClass('open');
+   });
+   $("#ClipArt2").animatesvg(
+   {
+      delay: 200,
+      duration: 2000,
+      easing: 'linear',
+      loop: true
+   });
+   $("#ClipArt2").animatesvg('animate');
+   $("#ClipArt3").animatesvg(
+   {
+      delay: 200,
+      duration: 2000,
+      easing: 'linear',
+      loop: true
+   });
+   $("#ClipArt3").animatesvg('animate');
+   $("#ClipArt4").animatesvg(
+   {
+      delay: 200,
+      duration: 2000,
+      easing: 'linear',
+      loop: true
+   });
+   $("#ClipArt4").animatesvg('animate');
+   $('#privacyPopup').on('show.bs.modal', function (e) 
+   {
+      $('#privacyPopup .modal-dialog').removeClass('animate-hide');
+      $('#privacyPopup .modal-dialog').addClass('animate-show');
+   });
+   $('#privacyPopup').on('hide.bs.modal', function (e)
+   {
+      $('#privacyPopup .modal-dialog').removeClass('animate-show');
+      var element = document.getElementById('privacyPopup');
+      var forceReflow = element.offsetWidth;
+      $('#privacyPopup .modal-dialog').addClass('animate-hide');
+   });
+   var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+   if (iOS)
+   {
+      $('#wb_welcome,#wb_LayoutGrid4').css('background-attachment', 'scroll');
+   }
+});
+</script>
+<script>
+$(document).ready(function () 
+{
+    if (document.cookie.indexOf("privacynotice=true")<0) 
+    {
+        $("#privacyPopup").modal("show");
+    }
+    $("#privacyCheckBox").change(function () 
+    {
+       document.cookie = "privacynotice=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";    
+       $("#privacyPopup").modal("hide");
+    });
+   
+});
+</script>
+</head>
+<body>
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_MegaMenu1" style="display:inline-block;width:100%;text-align:center;z-index:0;">
+   <div id="MegaMenu1-hamburger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+   </div>
+   <div id="MegaMenu1-nav">
+   <div id="MegaMenu1-close"><a role="button" aria-hidden="true" href="#">&times;</a></div>
+   <ul role="menubar" class="ui-widget" id="MegaMenu1">
+      <li>
+      <a role="menuitem" href="./wb16_agencydark.html" class="button ui-state-default">Home</a>
+      </li>
+      <li>
+      <a role="menuitem" href="#" class="button ui-state-default">About</a>
+      </li>
+      <li>
+      <a role="menuitem" href="#" class="button ui-state-default"><i class="fa fa-caret-down arrow"></i>Services</a>
+      <div class="submenu ui-widget-content">
+      <div class="row">
+         <ul>
+            <li><h2>Categories</h2></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Politics</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Science & Tech&nbsp;&nbsp;</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Business</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Entertainment</a></li>
+            <li><a role="menuitem" href="http://"><i class="fa fa-check-square-o bullet"></i>Top Stories</a></li>
+         </ul>
+         <ul>
+            <li><h2>More</h2></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Weather</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Health</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Lifestyle</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Pop Culture</a></li>
+            <li><a role="menuitem" href="http://"><i class="fa fa-check-square-o bullet"></i>Sports</a></li>
+         </ul>
+      </div>
+      <div class="row">
+         <ul>
+            <li><h2>Location</h2></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Europe</a></li>
+            <li><a role="menuitem" href="http://"><i class="fa fa-check-square-o bullet"></i>US</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>World</a></li>
+            <li><a role="menuitem" href="http://"><i class="fa fa-check-square-o bullet"></i>Local</a></li>
+         </ul>
+      </div>
+      </div>
+      </li>
+      <li>
+      <a role="menuitem" href="#" class="button ui-state-default"><i class="fa fa-caret-down arrow"></i>Team</a>
+      <div class="submenu ui-widget-content">
+      <div class="row">
+         <ul>
+            <li><h2>About Us</h2></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>About Us</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Site Map</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Editorial Guidelines</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Careers</a></li>
+         </ul>
+      </div>
+      <div class="row">
+         <ul>
+            <li><h2>News Services </h2></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>News RSS</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>News for your Phone</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>News Radio</a></li>
+         </ul>
+      </div>
+      <div class="row">
+         <ul>
+            <li><h2>Legal</h2></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Terms & Conditions</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Privacy & Cookies Notice</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Accessibility Information</a></li>
+            <li><a role="menuitem" href="http://www.wysiwygwebbuilder.com"><i class="fa fa-check-square-o bullet"></i>Contact Us</a></li>
+         </ul>
+      </div>
+      </div>
+      </li>
+      <li>
+      <a role="menuitem" href="#" class="button ui-state-default">Contact</a>
+      </li>
+   </ul>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_welcome">
+<div id="welcome-overlay"></div>
+<div id="welcome">
+<div class="col-1">
+<div id="wb_welcomeText">
+<p style="font-size:15px;line-height:16.5px;"><span style="font-size:32px;line-height:36px;font-weight:bold;">Hi everyone,</span></p>
+<p style="font-size:16px;line-height:18px;">undergraduate engineering student</p>
+</div>
+<a id="welcomeButton" href="#services" style="display:inline-block;width:148px;height:38px;z-index:2;">Read More</a>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid8">
+<div id="LayoutGrid8">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Text6">
+<span style="color:#FFFFFF;font-family:Arial;font-size:20px;">“ i'm prashant kumar ary. I’m a software developer and digital marketer with a passion for learning emerging technology. In fast few years, I have worked with many funded startups, self projects, and as a top-rated freelancer on marketplaces.”<br></span><span style="color:#FFFFFF;font-family:Arial;font-size:12px;"><br>prashant kumar ary</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Heading2" style="display:inline-block;width:100%;z-index:4;">
+<h1 id="Heading2">Recommended Services</h1>
+</div>
+<div id="wb_Heading1" style="display:inline-block;width:100%;z-index:5;">
+<h1 id="Heading1">What we do</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_services">
+<div id="services">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_ClipArt2" style="display:inline-block;width:52px;height:48px;z-index:6;position:relative;">
+<svg id="ClipArt2" height="48" width="52" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+   <path id="ClipArt2-shape0" d="M17 17 C17 17, 17 16, 17 16 C16 15, 16 15, 16 15 C15 15, 15 15, 14 15 C12 16, 10 17, 9 18 C7 20, 6 21, 5 23 C5 24, 5 24, 5 25 C5 25, 6 25, 6 26 C6 26, 6 26, 7 26 C7 26, 8 25, 8 25 C9 23, 10 22, 11 21 C12 20, 14 19, 16 18 C16 18, 16 18, 17 17 Z" />
+   <path id="ClipArt2-shape1" d="M44 6 L45 7 L38 14 L40 16 C41 16, 41 17, 41 17 C41 17, 41 18, 40 18 L38 20 C40 23, 41 26, 41 29 C41 32, 40 34, 39 36 C38 39, 37 41, 35 42 C33 44, 31 46, 28 47 C26 47, 23 48, 20 48 C18 48, 15 47, 12 47 C10 46, 8 44, 6 42 C4 41, 3 39, 2 36 C1 34, 0 32, 0 29 C0 27, 1 24, 2 22 C3 19, 4 17, 6 16 C8 14, 10 13, 12 12 C15 11, 18 10, 20 10 C24 10, 27 11, 30 13 L32 11 C33 11, 33 10, 34 10 C34 10, 35 11, 35 11 L37 13Z" />
+   <path id="ClipArt2-shape2" d="M44 5 C44 5, 44 5, 43 5 C43 5, 43 5, 43 5 L40 2 C40 2, 40 2, 40 2 C40 1, 40 1, 40 1 C40 1, 41 1, 41 1 C41 1, 41 1, 42 1 L44 4 C44 4, 44 4, 44 4 C44 4, 44 5, 44 5 Z" />
+   <path id="ClipArt2-shape3" d="M51 11 C51 11, 50 11, 50 11 C50 11, 50 11, 49 11 L47 8 C47 8, 47 8, 47 8 C47 8, 47 7, 47 7 C47 7, 47 7, 48 7 C48 7, 48 7, 48 7 L51 10 C51 10, 51 10, 51 10 C51 11, 51 11, 51 11 Z" />
+   <path id="ClipArt2-shape4" d="M52 5 C52 6, 52 6, 52 6 C52 6, 52 6, 52 7 C52 7, 51 7, 51 7 L48 7 C48 7, 48 7, 48 7 C47 6, 47 6, 47 6 C47 6, 47 6, 48 5 C48 5, 48 5, 48 5 L51 5 C51 5, 52 5, 52 5 Z" />
+   <path id="ClipArt2-shape5" d="M46 1 L46 3 C46 4, 46 4, 46 4 C46 4, 46 4, 46 4 C45 4, 45 4, 45 4 C45 4, 45 4, 45 3 L45 1 C45 1, 45 0, 45 0 C45 0, 45 0, 46 0 C46 0, 46 0, 46 0 C46 0, 46 1, 46 1 Z" />
+   <path id="ClipArt2-shape6" d="M51 2 L48 5 C48 5, 48 5, 48 5 C47 5, 47 5, 47 5 C47 5, 47 4, 47 4 C47 4, 47 4, 47 4 L49 1 C50 1, 50 1, 50 1 C50 1, 51 1, 51 1 C51 1, 51 1, 51 2 C51 2, 51 2, 51 2" />
+</defs>
+<clipPath id="ClipArt2-clippath0">
+   <use xlink:href="#ClipArt2-shape0"/>
+</clipPath>
+<use xlink:href="#ClipArt2-shape0" data-href="#ClipArt2-shape0" clip-path="url(#ClipArt2-clippath0)" style="fill:none;stroke:#ED7D31;stroke-width:4"/>
+<clipPath id="ClipArt2-clippath1">
+   <use xlink:href="#ClipArt2-shape1"/>
+</clipPath>
+<use xlink:href="#ClipArt2-shape1" data-href="#ClipArt2-shape1" clip-path="url(#ClipArt2-clippath1)" style="fill:none;stroke:#ED7D31;stroke-width:4"/>
+<clipPath id="ClipArt2-clippath2">
+   <use xlink:href="#ClipArt2-shape2"/>
+</clipPath>
+<use xlink:href="#ClipArt2-shape2" data-href="#ClipArt2-shape2" clip-path="url(#ClipArt2-clippath2)" style="fill:none;stroke:#ED7D31;stroke-width:4"/>
+<clipPath id="ClipArt2-clippath3">
+   <use xlink:href="#ClipArt2-shape3"/>
+</clipPath>
+<use xlink:href="#ClipArt2-shape3" data-href="#ClipArt2-shape3" clip-path="url(#ClipArt2-clippath3)" style="fill:none;stroke:#ED7D31;stroke-width:4"/>
+<clipPath id="ClipArt2-clippath4">
+   <use xlink:href="#ClipArt2-shape4"/>
+</clipPath>
+<use xlink:href="#ClipArt2-shape4" data-href="#ClipArt2-shape4" clip-path="url(#ClipArt2-clippath4)" style="fill:none;stroke:#ED7D31;stroke-width:4"/>
+<clipPath id="ClipArt2-clippath5">
+   <use xlink:href="#ClipArt2-shape5"/>
+</clipPath>
+<use xlink:href="#ClipArt2-shape5" data-href="#ClipArt2-shape5" clip-path="url(#ClipArt2-clippath5)" style="fill:none;stroke:#ED7D31;stroke-width:4"/>
+<clipPath id="ClipArt2-clippath6">
+   <use xlink:href="#ClipArt2-shape6"/>
+</clipPath>
+<use xlink:href="#ClipArt2-shape6" data-href="#ClipArt2-shape6" clip-path="url(#ClipArt2-clippath6)" style="fill:none;stroke:#ED7D31;stroke-width:4"/>
+</svg>
+
+</div>
+<div id="wb_servicesCard1" style="display:flex;width:100%;text-align:center;z-index:7;" data--250-bottom="transform: scale(1.0,1.0);" data-333-bottom="transform: scale(0.5,0.5);">
+   <div id="servicesCard1-card-body">
+      <div id="servicesCard1-card-item0">Design</div>
+      <div id="servicesCard1-card-item1"><br><br>Review and check the current performances of your Page speed and search result on Google with professional SEO tools and send you a detailed report with solutions<br></div>
+   </div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div id="wb_ClipArt3" style="display:inline-block;width:49px;height:48px;z-index:8;position:relative;">
+<svg id="ClipArt3" height="48" width="49" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+   <path id="ClipArt3-shape0" d="M49 30 C48 31, 47 32, 46 33 C45 34, 44 35, 43 36 C42 36, 41 37, 40 37 C38 37, 37 37, 36 37 C35 37, 34 37, 33 37 C32 37, 31 37, 30 36 C29 36, 28 36, 27 36 C27 35, 26 35, 26 35 L25 35 C22 39, 19 42, 15 44 C11 47, 6 48, 2 48 C1 48, 1 48, 0 48 C0 47, 0 47, 0 47 C0 46, 0 46, 0 46 C1 46, 1 46, 2 46 C6 46, 9 45, 13 43 C16 41, 19 38, 22 35 C21 35, 20 35, 19 35 C18 36, 17 36, 16 36 C15 36, 14 36, 13 36 C12 36, 11 35, 10 35 C9 35, 8 34, 7 33 C6 33, 5 32, 4 31 C3 30, 2 28, 1 27 C4 26, 6 25, 9 25 C11 25, 13 25, 14 25 C16 26, 17 26, 19 27 C20 28, 21 28, 22 29 C23 30, 23 30, 24 31 C25 29, 26 26, 27 23 C26 23, 26 23, 26 24 C26 24, 25 24, 24 24 C23 24, 23 24, 22 24 C21 24, 20 23, 19 23 C18 23, 17 23, 16 23 C15 22, 14 22, 13 22 C12 21, 11 20, 10 20 C10 19, 9 18, 8 17 C8 16, 8 15, 7 14 C9 13, 11 13, 12 13 C14 13, 15 13, 16 13 C17 13, 18 13, 19 14 C20 14, 21 15, 22 15 C23 16, 23 16, 24 17 C24 17, 25 18, 25 18 C26 19, 26 19, 26 20 C26 20, 27 21, 27 21 L27 21 C27 19, 27 17, 27 16 C27 16, 27 16, 27 16 C26 16, 26 15, 25 15 C24 14, 23 13, 23 13 C22 12, 21 11, 21 10 C20 9, 20 8, 20 7 C19 6, 20 5, 20 4 C20 2, 21 1, 22 0 C24 0, 26 1, 27 2 C28 2, 29 3, 30 4 C31 4, 31 5, 32 6 C32 7, 32 8, 32 8 C32 9, 32 10, 32 11 C32 11, 32 12, 32 13 C32 13, 31 14, 31 14 C31 15, 31 15, 31 15 L30 16 C30 16, 30 16, 30 17 C30 18, 30 19, 30 19 C30 19, 30 19, 31 19 C31 18, 31 18, 32 17 C32 17, 33 16, 34 16 C34 15, 35 15, 36 14 C37 14, 38 14, 39 13 C40 13, 42 13, 43 13 C45 13, 46 13, 48 14 C48 15, 47 16, 47 17 C46 18, 46 19, 45 20 C44 21, 44 21, 43 22 C42 23, 41 23, 40 23 C39 24, 38 24, 37 24 C36 24, 35 24, 34 24 C33 24, 33 24, 32 24 C31 24, 31 24, 30 24 L30 24 C29 27, 28 29, 27 31 C27 31, 27 31, 28 31 C28 31, 29 30, 29 30 C30 29, 31 29, 32 28 C33 28, 34 28, 36 27 C37 27, 38 27, 40 27 C41 27, 43 27, 44 27 C46 28, 48 29, 49 30" />
+</defs>
+<clipPath id="ClipArt3-clippath0">
+   <use xlink:href="#ClipArt3-shape0"/>
+</clipPath>
+<use xlink:href="#ClipArt3-shape0" data-href="#ClipArt3-shape0" clip-path="url(#ClipArt3-clippath0)" style="fill:none;stroke:#6B6B6B;stroke-width:4"/>
+</svg>
+
+</div>
+<div id="wb_servicesCard2" style="display:flex;width:100%;text-align:center;z-index:9;" data--250-bottom="transform: scale(1.0,1.0);" data-333-bottom="transform: scale(0.5,0.5);">
+   <div id="servicesCard2-card-body">
+      <div id="servicesCard2-card-item0">web developing</div>
+      <div id="servicesCard2-card-item1"><br><br>Build clean modern design website, responsive on all devices. Website will be updated with latest configured plugin’s according to requirement and SEO friendly.<br></div>
+   </div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div class="col-3-padding">
+<div id="wb_ClipArt4" style="display:inline-block;width:52px;height:48px;z-index:10;position:relative;">
+<svg id="ClipArt4" height="48" width="52" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+   <path id="ClipArt4-shape0" d="M49 10 C51 13, 52 16, 52 20 C52 24, 51 27, 49 30 C46 33, 43 36, 39 37 C35 39, 31 40, 26 40 C25 40, 23 40, 22 40 C18 43, 14 46, 8 47 C7 48, 6 48, 5 48 C5 48, 4 48, 4 48 C4 47, 4 47, 4 47 L4 47 C4 47, 4 47, 4 46 C4 46, 4 46, 4 46 C4 46, 4 46, 4 46 C4 46, 4 46, 4 46 C4 46, 4 45, 4 45 C4 45, 4 45, 5 45 C5 45, 5 44, 5 44 C6 43, 6 43, 6 43 C7 42, 7 42, 7 41 C8 41, 8 40, 8 40 C9 39, 9 39, 9 38 C9 37, 10 36, 10 36 C7 34, 4 31, 3 29 C1 26, 0 23, 0 20 C0 17, 1 15, 2 12 C3 10, 5 8, 8 6 C10 4, 13 3, 16 2 C19 0, 22 0, 26 0 C31 0, 35 1, 39 3 C43 4, 46 7, 49 10" />
+</defs>
+<clipPath id="ClipArt4-clippath0">
+   <use xlink:href="#ClipArt4-shape0"/>
+</clipPath>
+<use xlink:href="#ClipArt4-shape0" data-href="#ClipArt4-shape0" clip-path="url(#ClipArt4-clippath0)" style="fill:none;stroke:#6B6B6B;stroke-width:4"/>
+</svg>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="upStickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:44;">
+<div id="wb_upIcon" style="position:absolute;left:9px;top:8px;width:24px;height:24px;text-align:center;z-index:11;">
+<a href="#welcome"><div id="upIcon"><i class="fa fa-angle-up"></i></div></a></div>
+</div>
+<div id="wb_LayoutGrid10">
+<div id="LayoutGrid10">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_questions">
+<div id="questions">
+<div class="col-1">
+</div>
+</div>
+</div>
+<div id="wb_reviews">
+<div id="reviews">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_reviewsHeading" style="display:inline-block;width:100%;z-index:12;">
+<h1 id="reviewsHeading">Our Team</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid7">
+<div id="LayoutGrid7">
+<div class="row">
+<div class="col-1">
+<div id="wb_Card10" style="display:flex;width:100%;z-index:13;">
+   <div id="Card10-card-body">
+      <img id="Card10-card-item0" src="images/git image about.png" alt="" title="">
+      <div id="Card10-card-item1">prashant kumar ary</div>
+      <div id="Card10-card-item2">a computer science student</div>
+   </div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_Card7" style="display:flex;width:100%;z-index:14;">
+   <div id="Card7-card-body">
+      <img id="Card7-card-item0" src="images/avatarbw9.jpg" alt="" title="">
+      <div id="Card7-card-item1">krishnapal verma</div>
+      <div id="Card7-card-item2">Designer</div>
+   </div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_Card6" style="display:flex;width:100%;z-index:15;">
+   <div id="Card6-card-body">
+      <img id="Card6-card-item0" src="images/avatarbw19.jpg" alt="" title="">
+      <div id="Card6-card-item1">saurabh kumar</div>
+      <div id="Card6-card-item2">Designer</div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid4">
+<div id="LayoutGrid4-overlay"></div>
+<div id="LayoutGrid4">
+<div class="col-1">
+<div id="wb_Heading3" style="display:inline-block;width:100%;z-index:16;">
+<h1 id="Heading3">Join now the our  member list!</h1>
+</div>
+<hr id="Line2" style="display:inline-block;width:105px;z-index:17;">
+<div id="wb_Text3">
+<p>we are a cpmuter science engineer.if you want&nbsp; join our team .fill the form given below<img alt="" width="32" height="32" src="images/Text31.png"></p>
+</div>
+<input type="text" id="Editbox4" style="display:block;width: 100%;height:36px;z-index:19;" name="name" value="" spellcheck="false" placeholder="Name">
+<input type="text" id="Editbox3" style="display:block;width: 100%;height:36px;z-index:20;" name="email" value="" spellcheck="false" placeholder="Email">
+<input type="submit" id="Button3" name="" value="JOIN NOW" style="display:block;width: 100%;;height:39px;z-index:21;">
+<div id="wb_Text4">
+<span style="color:#FFFFFF;font-family:Arial;font-size:12px;">Have Any Questions? <a href="mailto:address@gmail.com">Contact us</a>.</span>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid5">
+<div id="LayoutGrid5">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_IconFont5" style="display:inline-block;width:24px;height:24px;text-align:center;z-index:23;">
+<div id="IconFont5"><i class="fa fa-facebook"></i></div>
+</div>
+<div id="wb_IconFont6" style="display:inline-block;width:24px;height:24px;text-align:center;z-index:24;">
+<div id="IconFont6"><i class="fa fa-twitter"></i></div>
+</div>
+<div id="wb_IconFont7" style="display:inline-block;width:24px;height:24px;text-align:center;z-index:25;">
+<div id="IconFont7"><i class="fa fa-linkedin"></i></div>
+</div>
+<div id="wb_IconFont8" style="display:inline-block;width:24px;height:24px;text-align:center;z-index:26;">
+<div id="IconFont8"><i class="fa fa-instagram"></i></div>
+</div>
+<div id="wb_IconFont9" style="display:inline-block;width:24px;height:24px;text-align:center;z-index:27;">
+<div id="IconFont9"><i class="fa fa-pinterest"></i></div>
+</div>
+<div id="wb_IconFont10" style="display:inline-block;width:24px;height:24px;text-align:center;z-index:28;">
+<a href="https://www.youtube.com/"><div id="IconFont10"><i class="fa fa-youtube-play"></i></div></a>
+</div>
+<div id="wb_IconFont11" style="display:inline-block;width:24px;height:24px;text-align:center;z-index:29;">
+<a href="https://github.com/prashant231197"><div id="IconFont11"><i class="fa fa-git-square"></i></div></a>
+</div>
+<div id="wb_IconFont12" style="display:inline-block;width:24px;height:24px;text-align:center;z-index:30;">
+<div id="IconFont12"><i class="fa fa-stack-overflow"></i></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid6">
+<div id="LayoutGrid6">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Text5">
+<span style="color:#3588F0;font-family:Arial;font-size:15px;">© 2021 copyright: </span><span style="color:#FFFFFF;font-family:Arial;font-size:15px;">https://www.prashantkumar.com</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="privacyPopup" class="modal fade" role="dialog">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<h4 class="modal-title"></h4>
+</div>
+<div class="modal-body">
+<div id="wb_privacyHeading" style="display:inline-block;width:100%;z-index:32;">
+<h1 id="privacyHeading">We value your privacy</h1>
+</div>
+<div id="wb_privacyText">
+<span style="color:#000000;font-family:Arial;font-size:13px;line-height:19px;">We and our partners use technologies, such as cookies, and process personal data, such as IP addresses and cookie identifiers, to personalise ads and content based on your interests, measure the performance of ads and content, and derive insights about the audiences who saw ads and content. Click below to consent to the use of this technology and the processing of your personal data for these purposes. You can change your mind and change your consent choices at any time by returning to this site. </span>
+</div>
+<input type="submit" id="privacyButton" onclick="$('#privacyPopup').modal('hide');return false;" name="" value="I ACCEPT" style="display:inline-block;width:217px;height:51px;z-index:34;cursor:pointer;" tabindex="1" autofocus>
+<hr id="privacyLine" style="display:block;width: 100%;z-index:35;">
+<div id="wb_privacyCheckBox" style="display:inline-block;width:16px;height:13px;z-index:36;">
+<input type="checkbox" id="privacyCheckBox" name="donotshow" value="on" style="display:inline-block;" tabindex="2"><label for="privacyCheckBox"></label>
+</div>
+<label for="reviewsHeading" id="privacyLabel" style="display:inline-block;width:204px;line-height:21px;z-index:37;">Don’t show this popup again</label>
+
+</div>
+</div>
+</div>
+</div>
+<a href="https://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb16.png" alt="WYSIWYG Web Builder" style="position:absolute;left:441px;top:5050px;margin: 0;border-width:0;z-index:250"></a>
+</body>
+</html>
